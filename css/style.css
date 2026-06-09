@@ -1,3 +1,4 @@
+```css
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -144,22 +145,19 @@ a {
   }
 }
 
-
-/* ============================================================
-   HERO SECTION
-   
-   Currently using a CSS background image.
-   ============================================================ */
 .hero {
   position: relative;
   min-height: 90vh;
   display: flex;
   align-items: flex-end;
+}
 
-  /* BROKEN: This should not be a background image */
-  background-image: url('../images/hero.png');
-  background-size: cover;
-  background-position: center;
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero::after {
@@ -384,23 +382,24 @@ a {
   margin-bottom: 1.25rem;
 }
 
-
-/* ============================================================
-   LANDSCAPE BANNER
-  
-   Currently using a CSS background image.
-   ============================================================ */
 .landscape-banner {
   position: relative;
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  /* BROKEN: This should not be a background image */
-  background-image: url('../images/landscape-banner.png');
-  background-size: cover;
-  background-position: center;
+.landscape-banner__picture,
+.landscape-banner__picture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.landscape-banner__picture img {
+  object-fit: cover;
 }
 
 .landscape-banner::before {
@@ -408,11 +407,12 @@ a {
   position: absolute;
   inset: 0;
   background: rgba(20, 20, 18, 0.65);
+  z-index: 1;
 }
 
 .landscape-banner__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 4rem 2rem;
   max-width: 700px;
@@ -516,3 +516,4 @@ a {
     text-align: center;
   }
 }
+```
